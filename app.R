@@ -65,13 +65,13 @@ server <- function(input, output) {
   )
   
   sub_data <- reactive({
-    req(row, col)
+    req(row(), col())
     tmp <- get_meta_subset(tab, row(), col())
     tmp
   })
   
   output$demoList<- renderReactable({
-    req(sub_data)
+    req(sub_data())
     reactable(
       sub_data(),
       sortable = FALSE,
