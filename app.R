@@ -71,7 +71,7 @@ server <- function(input, output) {
   })
   
   output$demoList<- renderReactable({
-    req(sub_data())
+    req(sub_data)
     reactable(
       sub_data(),
       sortable = FALSE,
