@@ -28,13 +28,8 @@ b_tab <- build(tab, metadata = TRUE) %>%
   relocate(row_id, row_label1, row_label2, var1_Placebo, `var1_Xanomeline Low Dose`, `var1_Xanomeline High Dose`)
 
 ui <- fillPage(
-  column(6,
-         reactableOutput("demoTab")
-  ),
-  
-  column(6,
-         reactableOutput("demoList")
-  )
+  reactableOutput("demoTab"),
+  reactableOutput("demoList")
 )
 
 server <- function(input, output) {
